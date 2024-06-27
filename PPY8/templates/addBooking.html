@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wypożycz</title>
+</head>
+<body>
+    <h1>Wypożycz</h1>
+    <form method="POST" action="/addBooking">
+        <!-- Formularz do dodawania rezerwacji -->
+        <label for="boat_id">ID motorówki:</label><br>
+        <input type="number" id="boat_id" name="boat_id" required min="1" max="5"><br><br>
+
+        <label for="start_date">Data rozpoczęcia:</label><br>
+        <input type="date" id="start_date" name="start_date" required><br><br>
+
+        <label for="days">Ilość dni:</label><br>
+        <input type="number" id="days" name="days" required min="1"><br><br>
+
+        <input type="submit" value="Dodaj rezerwację">
+    </form>
+</body>
+</html>

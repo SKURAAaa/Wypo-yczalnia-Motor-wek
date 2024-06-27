@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dostępne motorówki</title>
+</head>
+<body>
+    <h1>Dostępne motorówki</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Marka</th>
+                <th>Model</th>
+                <th>Dzienny koszt</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Wyświetlanie dostępnych motorówek -->
+            {% for boat in boats %}
+            <tr>
+                <td>{{ boat.id }}</td>
+                <td>{{ boat.brand }}</td>
+                <td>{{ boat.model }}</td>
+                <td>{{ boat.costPerDay }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="/main">Wróć</a>
+</body>
+</html>

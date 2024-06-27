@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twoje wypożyczenia</title>
+</head>
+<body>
+    <h1>Twoje wypożyczenia</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Użytkownik</th>
+                <th>Motorówka</th>
+                <th>Od Dnia</th>
+                <th>Dni</th>
+                <th>Koszt</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Wyświetlanie listy rezerwacji -->
+            {% for booking in bookings %}
+            <tr>
+                <td>{{ booking.user.fullName }}</td>
+                <td>{{ booking.boat.brand }} {{ booking.boat.model }}</td>
+                <td>{{ booking.dateFrom }}</td>
+                <td>{{ booking.days }}</td>
+                <td>{{ booking.cost }} zł</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="/main">Wróć</a>
+</body>
+</html>

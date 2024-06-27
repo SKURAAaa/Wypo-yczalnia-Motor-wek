@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Użytkownicy</title>
+</head>
+<body>
+    <h1>Użytkownicy</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Imię i nazwisko</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Wyświetlanie listy użytkowników -->
+            {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.fullName }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Wybierz id użytkownika dla bookingu</h2>
+    <form action="/selectUser" method="POST">
+        <label for="user_id">ID:</label><br>
+        <input type="number" id="user_id" name="user_id" required><br><br>
+
+        <input type="submit">
+    </form>
+</body>
+</html>
